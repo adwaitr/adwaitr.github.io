@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Song Player</title>
+	<script src="https://www.youtube.com/player_api"></script>
+</head>
+<body>
+	<h1>AAMHI RAPAN takto Jali</h1>
+	<button id="playButton">Put me to sleep</button>
+
+	<script>
+		var player;
+		function onYouTubePlayerAPIReady() {
+			player = new YT.Player('player', {
+				height: '0',
+				width: '0',
+				videoId: 'J9wlXHdXtks', // Replace with the ID of the YouTube video
+				playerVars: {
+					'autoplay': 0,
+					'controls': 0,
+					'showinfo': 0,
+					'rel': 0,
+					'modestbranding': 1
+				},
+				events: {
+					'onReady': onPlayerReady
+				}
+			});
+		}
+
+		function onPlayerReady(event) {
+			document.getElementById('playButton').addEventListener('click', function() {
+				player.playVideo();
+				player.mute();
+			});
+		}
+	</script>
+
+	<div id="player"></div>
+</body>
+</html>
