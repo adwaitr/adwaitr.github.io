@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Music Mixing UI</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+    /* Style for the mixer controls */
+    .mixer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+    .mixer label {
+      margin-bottom: 10px;
+    }
+    .mixer input[type="range"] {
+      width: 80%;
+    }
+    .mixer button {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Music Mixing UI</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Track 1</h2>
+        <audio src="path/to/track1.mp3" controls></audio>
+      </div>
+      <div class="col-md-6">
+        <h2>Track 2</h2>
+        <audio src="path/to/track2.mp3" controls></audio>
+      </div>
+    </div>
+    <div class="mixer">
+      <label>Track 1 Volume:</label>
+      <input id="track1-volume" type="range" min="0" max="1" step="0.1" value="1">
+      <label>Track 2 Volume:</label>
+      <input id="track2-volume" type="range" min="0" max="1" step="0.1" value="1">
+      <button id="mix-btn" class="btn btn-primary">Mix Tracks</button>
+    </div>
+  </div>
+
+  <script>
+    // Get references to the audio elements and the mix button
+    const track1 = document.querySelector('audio[src="path/to/track1.mp3"]');
+    const track2 = document.querySelector('audio[src="path/to/track2.mp3"]');
+    const mixBtn = document.getElementById('mix-btn');
+
+    // Add click event listener to the mix button
+    mixBtn.addEventListener('click', () => {
+      // Get the current volume values from the range inputs
+      const track1Volume = document.getElementById('track1-volume').value;
+      const track2Volume = document.getElementById('track2-volume').value;
+
+      // Set the volume of each track using the Web Audio API
+      const audioCtx = new AudioContext();
+      const track1Source = audioCtx.createMediaElementSource(track1);
+      const track1GainNode = audioCtx.createGain();
+      track1GainNode.gain.value = track1Volume;
+      track1Source.connect(track1GainNode);
+      track1GainNode.connect(audioCtx.destination);
+
+      const track2Source = audioCtx.createMediaElementSource(track2);
+      const track2GainNode = audioCtx.createGain();
+      track2GainNode.gain.value = track2Volume;
+      track2Source.connect(track2GainNode);
+      track2GainNode.connect(audioCtx.destination);
+    });
+  </script>
+</body>
+</html>
