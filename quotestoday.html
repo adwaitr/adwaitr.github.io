@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Quote Generator</title>
+	<style>
+		.container {
+			text-align: center;
+			margin-top: 50px;
+		}
+		#quote-box {
+			border: 1px solid black;
+			padding: 10px;
+			margin-top: 20px;
+			width: 50%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<button onclick="generateQuote()">Generate Quote</button>
+		<div id="quote-box"></div>
+	</div>
+
+	<script>
+		function generateQuote() {
+			var quotes = [
+				"Older men declare war. But it is youth that must fight and die.",
+				"In war, there are no unwounded soldiers.",
+				"The true soldier fights not because he hates what is in front of him, but because he loves what is behind him."
+			];
+			var randomNumber = Math.floor(Math.random() * quotes.length);
+			var quoteBox = document.getElementById("quote-box");
+			quoteBox.innerHTML = "<p>" + quotes[randomNumber] + "</p>";
+		}
+	</script>
+</body>
+</html>

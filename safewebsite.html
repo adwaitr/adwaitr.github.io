@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charSet="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+	<title>Free Writing Tool</title>
+	<style type="text/css">
+	input[type=text] {
+		font-size: 20px;
+		padding: 10px;
+		margin-bottom: 20px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		width: 80%;
+	}
+	button{
+		font-size: 16px;
+		padding: 10px 20px;
+		background-color: #4CAF50;
+		color: white;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+</style>
+</head>
+<body>
+	<div style="margin-left: 10px; margin-bottom: 10px;">
+		<h1>Write in the Black Box</h1>
+		<h6 style="color: #00ff00;"><i>Do not worry this is extremely safe</i></h6>
+	</div>
+	<div id="__next" style="margin-left: 10px;">
+		<script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script>
+		<div></div>
+		<div class="overflow-hidden w-full h-full relative">
+			<div class="flex h-full flex-1 flex-col md:pl-[260px]">
+				<main class="relative h-full w-full transition-width flex flex-col overflow-hidden items-stretch flex-1">
+					<div class="absolute bottom-0 left-0 w-full border-t md:border-t-0 dark:border-white/20 md:border-transparent md:dark:border-transparent md:bg-vert-light-gradient bg-white dark:bg-gray-800 md:!bg-transparent dark:md:bg-vert-dark-gradient pt-2">
+						<form class="stretch mx-8 flex flex-row gap-3 last:mb-2 md:mx-4 md:last:mb-6 lg:mx-auto lg:max-w-2xl xl:max-w-3xl">
+							<div class="relativemd:flex-col">
+								<div class="md:mb-2 gap-0 md:gap-2 justify-left"></div>
+								<div class="py-2 md:py-3 md:pl-4 relative border border-black/10 bg-white dark:border-gray-900/50 dark:text-white dark:bg-gray-700 rounded-md shadow-[0_0_10px_rgba(0,0,0,0.10)] dark:shadow-[0_0_15px_rgba(0,0,0,0.10)]">
+									<textarea style="width: 100vh; height: 50vh;" tabindex="0" data-id="root" rows="1" placeholder="Send a message..." class="border-0 bg-transparent focus:ring-0 focus-visible:ring-0 dark:bg-transparent pl-2 md:pl-0">			
+									</textarea>
+								</div>
+							</div>
+						</form>
+					</div>
+				</main>
+			</div>
+			<canvas style="width: 100vh; height:25vh; margin-left:3px;" id="canv">
+				<script>
+					const canvas = document.getElementById('canv');
+					const ctx = canvas.getContext('2d');
+
+					const w = canvas.width = document.body.offsetWidth;
+					const h = canvas.height = document.body.offsetHeight;
+					const cols = Math.floor(w / 20) + 1;
+					const ypos = Array(cols).fill(0);
+
+					ctx.fillStyle = '#000';
+					ctx.fillRect(0, 0, w, h);
+
+					function matrix () {
+						ctx.fillStyle = '#0001';
+						ctx.fillRect(0, 0, w, h);
+
+						ctx.fillStyle = '#0f0';
+						ctx.font = '15pt monospace';
+
+						ypos.forEach((y, ind) => {
+							const text = String.fromCharCode(Math.random() * 128);
+							const x = ind * 20;
+							ctx.fillText(text, x, y);
+							if (y > 100 + Math.random() * 10000) ypos[ind] = 0;
+							else ypos[ind] = y + 20;
+						});
+					}
+					setInterval(matrix, 50);
+				</script>
+			</canvas>
+</div>
+</body>
+</html>

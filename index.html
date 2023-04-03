@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Which character from Succession are you?</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style type="text/css">
+  #result {
+    font-size: 48px;
+  }
+</style>
+</head>
+<body style="background: #f8f9fa">
+  <div class="container my-5">
+    <h1 class="text-center mb-5 font-weight-bold">Which character from Succession are you?</h1>
+    <img style="max-height: 200px;" src="https://pbs.twimg.com/media/EDbBm3MWsAAkmPP.jpg">
+    <br>
+    <br>
+    <div class="card" style="border-radius: 20px">
+      <div class="card-body">
+        <h3 class="card-title mb-4">What is your preferred way of handling a business crisis?</h3>
+        <form>
+          <div class="form-group">
+            <label class="radio-inline"><input type="radio" name="answer" value="1"> Face the crisis head-on and take immediate action.</label>
+          </div>
+          <div class="form-group">
+            <label class="radio-inline"><input type="radio" name="answer" value="2"> Wait and see how the situation develops before making a decision.</label>
+          </div>
+          <div class="form-group">
+            <label class="radio-inline"><input type="radio" name="answer" value="3"> Consult with advisors and other experts before taking action.</label>
+          </div>
+          <div class="form-group">
+            <label class="radio-inline"><input type="radio" name="answer" value="4"> Shift focus to other areas of the business to minimize impact of crisis.</label>
+          </div>
+          <button type="button" class="btn btn-success" onclick="submitAnswer()">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div id="result" class="mt-4"></div>
+    <a href="/buttonshine.html" style="font-size: 10px;" class="btn btn-warning">M 7 7</a>
+    <a href="/instagramable.html" style="font-size: 10px;" class="btn btn-primary">His name is VOWELS, where can I find him?</a>
+    <a href="/safewebsite.html" style="font-size: 10px;" class="btn btn-success">BLUE OYSTER CULT</a>
+  </div>
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNSbNIV" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    function submitAnswer() {
+      var answer = document.querySelector('input[name="answer"]:checked').value;
+      var characters = ["Logan Roy", "Kendall Roy", "Roman Roy", "Shiv Roy", "Connor Roy", "Tom Wambsgans", "Greg Hirsch"];
+      var result = characters[Math.floor(Math.random() * characters.length)];
+      document.getElementById("result").innerHTML = "You are " + result;
+    }
+  </script>
+</body>
+</html>
