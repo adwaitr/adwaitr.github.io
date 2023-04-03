@@ -2,53 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Silver String Effect</title>
+  <title>Silver Strings Effect</title>
   <!-- Include Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <style>
-    /* Style for the moving silver strings */
-    .moving-string {
+    /* Style for the silver strings */
+    .silver-strings {
+      width: 100%;
+      height: 100%;
       position: absolute;
       top: 0;
-      left: -50%;
-      width: 100%;
-      height: 5px;
+      left: 0;
+      z-index: -1;
       background-color: black;
-      animation: moving-strings 2s linear infinite;
-      animation-play-state: paused; /* Set initial state to paused */
+      overflow: hidden;
     }
-    @keyframes moving-strings {
-      from { left: -50%; }
-      to { left: 100%; }
+    .silver-strings span {
+      position: absolute;
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-color: silver;
+      animation: move 5s linear infinite;
+    }
+    /* Animation keyframes */
+    @keyframes move {
+      0% {
+        transform: translateY(-100%);
+      }
+      100% {
+        transform: translateY(100%);
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Silver String Effect</h1>
+    <h1>Silver Strings Effect</h1>
     <button id="release-btn" class="btn btn-primary">Release Them</button>
-    <div id="strings-container"></div>
+    <div class="silver-strings"></div>
   </div>
 
   <script>
-    // Get references to the button and the container for the moving strings
     const releaseBtn = document.getElementById('release-btn');
-    const stringsContainer = document.getElementById('strings-container');
+    const silverStrings = document.querySelector('.silver-strings');
 
-    // Add click event listener to the release button
     releaseBtn.addEventListener('click', () => {
-      // Create 10 moving strings and append them to the container
-      for (let i = 0; i < 10; i++) {
-        const string = document.createElement('div');
-        string.classList.add('moving-string');
-        stringsContainer.appendChild(string);
+      // Add 50 spans to the silver strings container
+      for (let i = 0; i < 50; i++) {
+        const span = document.createElement('span');
+        span.style.left = Math.random() * 100 + '%';
+        span.style.top = Math.random() * 100 + '%';
+        silverStrings.appendChild(span);
       }
-
-      // Start the animation by setting the play state to running
-      const strings = document.querySelectorAll('.moving-string');
-      strings.forEach(string => {
-        string.style.animationPlayState = 'running';
-      });
     });
   </script>
 </body>
