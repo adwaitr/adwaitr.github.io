@@ -40,11 +40,21 @@
             border-radius: 15px;
             text-decoration: none;
             transition: background-color 0.3s ease;
+	    box-shadow: 0 0 4px #999;
+	    background-position: center;
+            transition: background 0.8s;
         }
 
         .link:hover {
             background-color: #3367d6;
+	    background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;	
         }
+
+	.link:active {
+ 	    background-color: #6eb9f7;
+            background-size: 100%;
+            transition: background 0s;
+	} 
     </style>
 </head>
 <body>
