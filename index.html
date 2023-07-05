@@ -10,6 +10,8 @@
             height: 100vh;
             background-color: #f8f8f8;
             font-family: Arial, sans-serif;
+	    margin: 0;
+            overflow: hidden;
         }
 
         .container {
@@ -54,6 +56,12 @@
  	    background-color: #6eb9f7;
             background-size: 100%;
             transition: background 0s;
+	#particles-js {
+	    width: 100%;
+	    height: 100vh;
+	    position: fixed;
+	    top: 0;
+	    left: 0;
 	} 
     </style>
 </head>
@@ -64,5 +72,9 @@
         <br>
         <a class="link" href="https://adwaitr.notion.site/Adwait-Rangnekar-a7a05844335b4655a4a3dfa193785b20?pvs=4">Go to Adwaitr's Personal Site</a>
     </div>
+    <div id="particles-js"></div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
