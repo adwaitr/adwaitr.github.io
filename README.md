@@ -1,2 +1,3 @@
 # adwaitr.github.io
-Personal Site
+Personal Website
+Links linktr.ee/adwaitr
