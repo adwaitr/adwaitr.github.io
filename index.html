@@ -1,48 +1,139 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adwait</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            background: #fff;
-            color: #000;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-        }
-        h1 {
-            font-size: 3rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-        p {
-            font-size: 1.25rem;
-            margin-bottom: 1.5rem;
-        }
-        a {
-            color: #000;
-            text-decoration: underline;
-            margin: 0 10px;
-            font-size: 1rem;
-        }
-    </style>
+
+    <!-- Primary Meta Tags -->
+    <title>Adwait Rajagopal | Developer & Creator</title>
+    <meta name="title" content="Adwait Rajagopal | Developer & Creator">
+    <meta name="description" content="Personal website of Adwait Rajagopal - Developer, Creator, and Technology Enthusiast.">
+    <meta name="author" content="Adwait Rajagopal">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adwaitr.github.io/">
+    <meta property="og:title" content="Adwait Rajagopal | Developer & Creator">
+    <meta property="og:description" content="Personal website of Adwait Rajagopal - Developer, Creator, and Technology Enthusiast.">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://adwaitr.github.io/">
+    <meta name="twitter:title" content="Adwait Rajagopal | Developer & Creator">
+    <meta name="twitter:description" content="Personal website of Adwait Rajagopal - Developer, Creator, and Technology Enthusiast.">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#d8d6c5">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <h1>Adwait</h1>
-    <br></br>
-    <div>
-        <a href="https://x.com/adwaitr_">X</a>
-        <a href="mailto:@adwaitedu@gmail.com">Email</a>
+    <div class="site-wrapper">
+        <div class="noise"></div>
+
+        <!-- Header -->
+        <header class="header">
+            <button class="logo-btn" id="logo-btn">
+                <span class="logo-text">AR</span>
+            </button>
+            <div class="header-right">
+                <button class="menu-toggle" id="menu-toggle">
+                    <span class="menu-text">Menu</span>
+                    <div class="menu-icon">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </header>
+
+        <!-- Nav Overlay -->
+        <div class="nav-overlay" id="nav-overlay">
+            <nav class="overlay-menu">
+                <button class="overlay-link" data-section="work">
+                    <span class="overlay-num">01</span> Work
+                </button>
+                <button class="overlay-link" data-section="about">
+                    <span class="overlay-num">02</span> About
+                </button>
+                <button class="overlay-link" data-section="contact">
+                    <span class="overlay-num">03</span> Contact
+                </button>
+                <div class="overlay-divider"></div>
+                <a href="https://x.com/adwaitr_" class="overlay-link overlay-link-secondary" target="_blank" rel="noopener">X / Twitter</a>
+                <a href="mailto:adwaitedu@gmail.com" class="overlay-link overlay-link-secondary">Email</a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main-content" id="main-content">
+            <div class="layout-grid">
+                <!-- Headline -->
+                <div class="cell-headline">
+                    <h1 class="hero-message">
+                        <div class="hero-line">Developer.</div>
+                        <div class="hero-line">Creator.</div>
+                        <div class="hero-line accent">Building the future.</div>
+                    </h1>
+                </div>
+
+                <!-- Navigation -->
+                <div class="cell-nav">
+                    <nav class="primary-nav">
+                        <div class="nav-item" data-section="work">
+                            <button class="nav-link" type="button">
+                                <span class="nav-prefix">View</span>
+                                <span class="nav-title">Work</span>
+                            </button>
+                        </div>
+                        <div class="nav-item" data-section="about">
+                            <button class="nav-link" type="button">
+                                <span class="nav-prefix">Learn</span>
+                                <span class="nav-title">About</span>
+                            </button>
+                        </div>
+                        <div class="nav-item" data-section="contact">
+                            <button class="nav-link" type="button">
+                                <span class="nav-prefix">Get in</span>
+                                <span class="nav-title">Contact</span>
+                            </button>
+                        </div>
+                    </nav>
+                </div>
+
+                <!-- Info -->
+                <div class="cell-info">
+                    <nav class="secondary-nav">
+                        <div class="social-links">
+                            <a href="https://x.com/adwaitr_" class="social-link" target="_blank" rel="noopener" title="X / Twitter">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                </svg>
+                            </a>
+                            <a href="mailto:adwaitedu@gmail.com" class="social-link" title="Email">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </main>
+
+        <!-- Expanded Section Layer -->
+        <div class="section-layer" id="section-layer">
+            <div class="section-content" id="section-content">
+                <!-- Content populated by JS -->
+            </div>
+        </div>
     </div>
+
+    <script src="/script.js"></script>
 </body>
 </html>
