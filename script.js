@@ -37,43 +37,15 @@ const sections = {
     work: {
         title: 'Work',
         content: `
-            <h2>Selected Work</h2>
-            <p>A collection of projects and experiments in development, design, and technology.</p>
-            <div class="work-grid">
-                <div class="work-item">
-                    <h3>Project One</h3>
-                    <p>Description of your first project. Add details about what you built and the technologies used.</p>
-                </div>
-                <div class="work-item">
-                    <h3>Project Two</h3>
-                    <p>Description of your second project. Highlight the key features and impact.</p>
-                </div>
-                <div class="work-item">
-                    <h3>Project Three</h3>
-                    <p>Description of your third project. Share what you learned and accomplished.</p>
-                </div>
-            </div>
+            <h2>Work</h2>
+            <p>Coming soon.</p>
         `
     },
-    about: {
-        title: 'About',
+    writing: {
+        title: 'Writing',
         content: `
-            <h2>About Me</h2>
-            <p>I'm Adwait Rajagopal, a developer and creator passionate about building innovative solutions and exploring new technologies.</p>
-            <p>My work focuses on creating meaningful digital experiences and pushing the boundaries of what's possible with code.</p>
-            <p>When I'm not coding, you can find me exploring new ideas, learning new skills, and connecting with other creators.</p>
-        `
-    },
-    contact: {
-        title: 'Contact',
-        content: `
-            <h2>Get in Touch</h2>
-            <p>I'm always interested in hearing about new projects and opportunities.</p>
-            <p>Feel free to reach out via email or connect with me on X.</p>
-            <div style="margin-top: 3rem;">
-                <p><strong>Email:</strong> <a href="mailto:adwaitedu@gmail.com" style="text-decoration: underline;">adwaitedu@gmail.com</a></p>
-                <p><strong>X / Twitter:</strong> <a href="https://x.com/adwaitr_" target="_blank" rel="noopener" style="text-decoration: underline;">@adwaitr_</a></p>
-            </div>
+            <h2>Writing</h2>
+            <p>Coming soon.</p>
         `
     }
 };
