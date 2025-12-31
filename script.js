@@ -38,7 +38,17 @@ const sections = {
         title: 'Work',
         content: `
             <h2>Work</h2>
-            <p>Coming soon.</p>
+            <div class="work-grid">
+                <div class="work-item">
+                    <h3>Artha</h3>
+                </div>
+                <div class="work-item">
+                    <h3>Cravetown</h3>
+                </div>
+                <div class="work-item">
+                    <h3>Riot City</h3>
+                </div>
+            </div>
         `
     },
     writing: {
